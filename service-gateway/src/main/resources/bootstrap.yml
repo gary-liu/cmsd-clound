@@ -1,0 +1,29 @@
+spring:
+  application:
+    name: service-gateway
+  cloud:
+    consul:
+      host: localhost
+      port: 8500
+      discovery:
+        instance-id: ${spring.application.name}-${server.port}-${spring.cloud.client.ip-address}
+    config:
+      fail-fast: true
+      retry:
+        max-attempts: 5
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+server:
+  port: 9180
+
+# 暴露所有端点
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: ALWAYS

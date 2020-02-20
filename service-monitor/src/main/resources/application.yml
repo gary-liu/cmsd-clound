@@ -1,0 +1,24 @@
+server:
+  port: 9185
+
+spring:
+  application:
+    name: service-monitor
+  cloud:
+    consul:
+      host: localhost
+      port: 8500
+      discovery:
+        instance-id: ${spring.application.name}-${server.port}-${spring.cloud.client.ip-address}
+    config:
+      fail-fast: true
+      retry:
+        max-attempts: 5
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+  boot:
+    admin:
+      discovery:
+        ignored-services: consul
