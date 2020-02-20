@@ -40,7 +40,7 @@
         <jjwt.version>0.10.7</jjwt.version>
         <mybatis.version>2.1.0</mybatis.version>
         <kaptcha.version>0.0.9</kaptcha.version>
-        <fastjson.json>1.2.24</fastjson.json>
+        <fastjson.json>1.2.25</fastjson.json>
     </properties>
 
     <dependencies>
